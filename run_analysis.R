@@ -31,4 +31,5 @@ for (i in 1:(length(cn)-3)) {
 mystring <- substr(mystring,1,nchar(mystring)-1)
                    
 foutput<- sqldf(paste(mystring, " from mdf group by SubjectCode, ActivityCode order by SubjectCode, ActivityCode", sep = ""))
-write.csv(foutput,"tidy.txt",quote=F)
+#write.csv(foutput,"tidy.txt",quote=F)
+write.table(foutput,"tidy.txt",row.name=F)
